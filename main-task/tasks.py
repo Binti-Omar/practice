@@ -16,6 +16,7 @@ print(area)
 # Once you learn functions,revisit this and write this code inside a function.
 
 numb = int(input("Write a number here:"))
+
 if numb%2==0:
     print("The number is an even number")
     if numb%4==0:
@@ -24,14 +25,15 @@ else:
     print("The number is an odd number")
 
 # method 2
-# numb = int(input("Write a number here: "))
-# if numb % 4 == 0:
-#     print("The number is even.")
-#     print("The number is divisible by 4.")
-# elif numb % 2 == 0:
-#     print("The number is even.")
-# else:
-#     print("The number is odd.")   
+numb = int(input("Write a number here: "))
+
+if numb % 4 == 0:
+    print("The number is even.")
+    print("The number is divisible by 4.")
+elif numb % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")   
 
 
 # TASK 3: Using Python or PHP or Java or Ruby or JavaScript
@@ -41,29 +43,130 @@ else:
 # e.g if a user enters “712345678”, the program should display “+254712345678”
 # Once you learn functions,revisit this and write this code inside a function.
 
+phone_number=input("Enter phone number:")
+
+if phone_number.startswith('+254') and len(phone_number)==13:
+    valid="phone number"
+elif phone_number.startswith('7') and len('phone_number')==9:
+    valid="+254"+phone_number
+else:
+    valid="phone number is not "
+print(f"{valid} is valid")
+
 # TASK 4: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program which accepts email as form input or from terminal. Validate the email by checking if it's a valid email. 
 # Hint: Check if it contains an “@” symbol and “.” symbol.
 # Once you learn functions,revisit this and write this code inside a function.
 
+email=input("enter the email: ")
+
+if email.find('@')==-1 or email.count('.')==0:
+    print('invalid email')
+else:
+    print('valid email')
+
+email=input("enter email:")
+
+if '@' in email and '.' in email:
+    print('Valid email')
+else:
+    print("invalid email")
+
 # TASK 5: Using Python or PHP or Java or Ruby or JavaScript
 # Implement a program that takes 3 users  inputs from the terminal or the Browser, and stores them in three variables. Return the largest of the three. Do this without using the the inbuilt max () function!
 # The goal of this exercise is to think about some internals that programs normally take care of for us. 
+
+a = int(input("enter the first number: "))
+b = int(input("enter the second number: "))
+c = int(input("enter the third number: "))
+
+if a>=b and a>=c:
+    print(f"the largest number is {a}")
+elif b>=a and b>=c:
+    print(f"the largest number is {b}")
+else:
+    print(f"the largest number is {c}")
 
 # TASK 6:Using Python or PHP or Java or Ruby or JavaScript
 # Write a program that lets the user input a password. Give them only 4 attempts to check the passwords entered against “admin@123”. If the password is correct access is granted. After you show them a message , the account is blocked.
 # Once you learn functions,revisit this and write this code inside a function.
 
+attempts = 4
+correct_password="admin@123"
+for i in range(1, attempts + 1):
+    password = input("enter password here: ")
+    if password == correct_password:
+        print("Access granted")
+        break
+    else:
+        remaining_attempts  =attempts - i
+        if remaining_attempts > 0:
+            print(f"Access denied.You have {remaining_attempts} attempts remaining")
+        else:
+            print("The account is blocked.")
+
+attempts = 4
+correct_password = "admin@123"
+
+for i in range(4):
+    password = input("Enter password: ")
+
+    if password == correct_password:
+        print("Access granted")
+        break
+    else:
+        remaining_attempts = attempts - i - 1
+
+        if remaining_attempts > 0:
+            print(f"Access denied. You have {remaining_attempts} attempt(s) remaining.")
+        else:
+            print("The account is blocked.")
+
 # TASK 7: Using Python or PHP or Java or Ruby or JavaScript
 # Write that prompts the user to input student marks. The input should be between 0 and 100.Then output the correct grade: 
 # A > 79 , B - 60 to 79, C  > 49 to 59, D - 40 to 49, E - less 40
 # Once you learn functions,revisit this and write this code inside a function.
+students_marks = int(input("Enter marks : "))
 
+if students_marks < 0 or students_marks > 100:
+    print("Invalid marks")
+elif students_marks >= 79:
+    print("A")
+elif students_marks >= 60:
+    print("B") 
+elif students_marks >= 49:
+    print("C") 
+elif students_marks >= 40:
+    print("D") 
+else:
+    print("E") 
 
 # TASK 8: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program that takes as input the speed of a car e.g 80. If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/s above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
 # For example, if the speed is 80, it should print: “Points: 2”. If the driver gets more than 12 points, the function should print: “License suspended”.
 # Once you learn functions,revisit this and write this code inside a function.
+speed = int(input("Enter the car speed: "))
+
+if speed <= 70:
+    print("OK")
+else:
+    total_points = (speed - 70) // 5
+    print(f"demerit points:{total_points}")
+    if total_points > 12:
+        print("License suspended")
+    else:
+        print("Do not exceed the speed limit.")
+
+speed = int(input("Enter the car speed: "))
+
+if speed <= 70:
+    print("OK")
+else:
+    total_points = (speed - 70) // 5
+    print(f"Points: {total_points}")
+
+    if total_points > 12:
+        print("License suspended")  
 
 
 # TASK 9: Using Python or PHP or Java or Ruby or JavaScript
@@ -75,10 +178,10 @@ else:
 # ****
 # *****.....
 # Once you learn functions,revisit this and write this code inside a function.
+stars = int(input("Enter a number: "))
 
-
-
-
+for i in range(1,stars + 1):
+   print("*" * i)
 
 # TASK 10: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program that calculates the total stock in a company from the array/list below if we know that the stock is the last digit in every array/list.
@@ -87,6 +190,25 @@ else:
 
 # NB: ONCE YOU COPY AND PASTE THE LIST ABOVE,REWRITE THE SINGLE QUOTES AS THE ABOVE LIST WILL GIVE YOU AN ERROR.
 # Once you learn functions,revisit this and write this code inside a function.
+prods = [['omo','30kshs','300'], ['milk','50kshs','200'], ['bread','45kshs','359'], ['coffee','5kshs','79']]
+
+for product in prods:
+    product[2] = int(product[2])
+
+x=prods[0][2]+prods[1][2]+prods[2][2]+prods[3][2]
+
+print(x)
+
+prods = [['omo','30kshs','300'], ['milk','50kshs','200'],['bread','45kshs','359'], ['coffee','5kshs','79']]
+
+total_stock=0
+
+for i in prods:
+    print(int((i[2])))
+    total_stock=total_stock +int((i[2]))
+
+print(total_stock)
+
 
 # TASK 11: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program that takes the date of birth of a person and the program outputs the age in terms of years,months,days TODAY.datetime
