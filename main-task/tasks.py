@@ -1,11 +1,23 @@
 # TASK 1: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program that prompts the user to enter the base and height of a triangle and returns its area.
 # Once you learn functions,revisit this and write this code inside a function.
-base = input("Enter the base here:")
+
+# base = int(input("Enter the base here:"))
+# height = int(input("Enter the height here:"))
+# c = 1/2
+# area =c * base * height
+# print(area)
+
+base = int(input("Enter the base here:"))
 height = int(input("Enter the height here:"))
-c = 1/2
-area =c * base * height
-print(area)
+# half = 1/2
+
+def area_triangle(base,height):
+    area = 1/2 * base * height
+    # sends the result back to where the function was called.
+    return area
+
+print(area_triangle(base,height))
 
 # TASK 2: Using Python or PHP or Java or Ruby or JavaScript
 # Prompt the user for a number either on a form input or the terminal. Depending on whether the number is even or odd, display  either “odd” or “even” to the user.
@@ -15,26 +27,39 @@ print(area)
 # If the number is a multiple of 4, print out “divisible by 4”.
 # Once you learn functions,revisit this and write this code inside a function.
 
-numb = int(input("Write a number here:"))
+# numb = int(input("Write a number here:"))
 
-if numb%2==0:
-    print("The number is an even number")
-    if numb%4==0:
-        print("The number is divisible by 4")
-else:
-    print("The number is an odd number")
+# if numb%2==0:
+#     print("The number is an even number")
+#     if numb%4==0:
+#         print("The number is divisible by 4")
+# else:
+#     print("The number is an odd number")
 
-# method 2
-numb = int(input("Write a number here: "))
+# # method 2 is logically correct
+# numb = int(input("Write a number here: "))
 
-if numb % 4 == 0:
-    print("The number is even.")
-    print("The number is divisible by 4.")
-elif numb % 2 == 0:
-    print("The number is even.")
-else:
-    print("The number is odd.")   
+# if numb % 4 == 0:
+#     print("The number is even.")
+#     print("The number is divisible by 4.")
+# elif numb % 2 == 0:
+#     print("The number is even.")
+# else:
+#     print("The number is odd.")   
 
+number = int(input("Enter your number: ")) 
+
+def check_number(number):
+    if number % 4  == 0:
+        message = "The number is even and divisible by 4"
+    elif number % 2 == 0:
+        message = "The number is even"
+    else:
+        message = "The number is odd"    
+
+    return message
+
+print(check_number(number))
 
 # TASK 3: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program which gets a phone number from a form input or terminal. Validates the phone number by checking if it starts with +254.. or 07.. or 7… or 254.. or 01... or  1.. Convert the number to start with +254… 
@@ -43,34 +68,86 @@ else:
 # e.g if a user enters “712345678”, the program should display “+254712345678”
 # Once you learn functions,revisit this and write this code inside a function.
 
-phone_number=input("Enter phone number:")
+# phone_number = input("Enter phone number: ").strip()
 
-if phone_number.startswith('+254') and len(phone_number)==13:
-    valid="phone number"
-elif phone_number.startswith('7') and len('phone_number')==9:
-    valid="+254"+phone_number
-else:
-    valid="phone number is not "
-print(f"{valid} is valid")
+# if phone_number.startswith("+254") and len(phone_number) == 13:
+#     print("The number is correct")
+
+# elif phone_number.startswith("07") and len(phone_number) == 10:
+#     phone_number = "+254" + phone_number[1:]
+#     print(phone_number)
+
+# elif phone_number.startswith("7") and len(phone_number) == 9:
+#     phone_number = "+254" + phone_number
+#     print(phone_number)
+
+# elif phone_number.startswith("254") and len(phone_number) == 12:
+#     phone_number = "+" + phone_number
+#     print(phone_number)
+
+# elif phone_number.startswith("01") and len(phone_number) == 10:
+#     phone_number = "+254" + phone_number[1:]
+#     print(phone_number)
+
+# elif phone_number.startswith("1") and len(phone_number) == 9:
+#     phone_number = "+254" + phone_number
+#     print(phone_number)
+
+# else:
+#     print("Invalid phone number.")
+
+phone_number = input("Enter phone number: ").strip()
+
+def validate_phone_number(phone_number):
+    if phone_number.startswith("+254") and len(phone_number) == 13:
+        return "the number is correct"
+
+    elif phone_number.startswith("07") and len(phone_number) == 10:
+        return "+254" + phone_number[1:]
+
+    elif phone_number.startswith("7") and len(phone_number) == 9:
+        return "+254" + phone_number
+
+    elif phone_number.startswith("254") and len(phone_number) == 12:
+        return "+" + phone_number
+
+    elif phone_number.startswith("01") and len(phone_number) == 10:
+        return "+254" + phone_number[1:]
+
+    elif phone_number.startswith("1") and len(phone_number) == 9:
+        return "+254" + phone_number
+
+    else:
+        return "Invalid phone number."
+print(number(phone_number))
 
 # TASK 4: Using Python or PHP or Java or Ruby or JavaScript
 # Write a program which accepts email as form input or from terminal. Validate the email by checking if it's a valid email. 
 # Hint: Check if it contains an “@” symbol and “.” symbol.
 # Once you learn functions,revisit this and write this code inside a function.
 
+# email=input("enter the email: ")
+
+# if email.find('@')==-1 or email.count('.')==0:
+#     print('invalid email')
+# else:
+#     print('valid email')
+
+# email=input("enter email:")
+
+# if '@' in email and '.' in email:
+#     print('Valid email')
+# else:
+#     print("invalid email")
+
 email=input("enter the email: ")
 
-if email.find('@')==-1 or email.count('.')==0:
-    print('invalid email')
-else:
-    print('valid email')
-
-email=input("enter email:")
-
-if '@' in email and '.' in email:
-    print('Valid email')
-else:
-    print("invalid email")
+def check_email(email):
+    if '@' in email and '.' in email:
+        return "Valid email"
+    else:
+        return "invalid email"
+print(check_email(email))
 
 # TASK 5: Using Python or PHP or Java or Ruby or JavaScript
 # Implement a program that takes 3 users  inputs from the terminal or the Browser, and stores them in three variables. Return the largest of the three. Do this without using the the inbuilt max () function!
@@ -91,19 +168,19 @@ else:
 # Write a program that lets the user input a password. Give them only 4 attempts to check the passwords entered against “admin@123”. If the password is correct access is granted. After you show them a message , the account is blocked.
 # Once you learn functions,revisit this and write this code inside a function.
 
-attempts = 4
-correct_password="admin@123"
-for i in range(1, attempts + 1):
-    password = input("enter password here: ")
-    if password == correct_password:
-        print("Access granted")
-        break
-    else:
-        remaining_attempts  =attempts - i
-        if remaining_attempts > 0:
-            print(f"Access denied.You have {remaining_attempts} attempts remaining")
-        else:
-            print("The account is blocked.")
+# attempts = 4
+# correct_password="admin@123"
+# for i in range(1, attempts + 1):
+#     password = input("enter password here: ")
+#     if password == correct_password:
+#         print("Access granted")
+#         break
+#     else:
+#         remaining_attempts  =attempts - i
+#         if remaining_attempts > 0:
+#             print(f"Access denied.You have {remaining_attempts} attempts remaining")
+#         else:
+#             print("The account is blocked.")
 
 attempts = 4
 correct_password = "admin@123"
@@ -130,14 +207,19 @@ students_marks = int(input("Enter marks : "))
 
 if students_marks < 0 or students_marks > 100:
     print("Invalid marks")
+
 elif students_marks >= 79:
     print("A")
+
 elif students_marks >= 60:
-    print("B") 
+    print("B")
+
 elif students_marks >= 49:
     print("C") 
+
 elif students_marks >= 40:
     print("D") 
+    
 else:
     print("E") 
 
@@ -145,17 +227,17 @@ else:
 # Write a program that takes as input the speed of a car e.g 80. If the speed is less than 70, it should print “Ok”. Otherwise, for every 5 km/s above the speed limit (70), it should give the driver one demerit point and print the total number of demerit points.
 # For example, if the speed is 80, it should print: “Points: 2”. If the driver gets more than 12 points, the function should print: “License suspended”.
 # Once you learn functions,revisit this and write this code inside a function.
-speed = int(input("Enter the car speed: "))
+# speed = int(input("Enter the car speed: "))
 
-if speed <= 70:
-    print("OK")
-else:
-    total_points = (speed - 70) // 5
-    print(f"demerit points:{total_points}")
-    if total_points > 12:
-        print("License suspended")
-    else:
-        print("Do not exceed the speed limit.")
+# if speed <= 70:
+#     print("OK")
+# else:
+#     total_points = (speed - 70) // 5
+#     print(f"demerit points:{total_points}")
+#     if total_points > 12:
+#         print("License suspended")
+#     else:
+#         print("Do not exceed the speed limit.")
 
 speed = int(input("Enter the car speed: "))
 
@@ -190,14 +272,14 @@ for i in range(1,stars + 1):
 
 # NB: ONCE YOU COPY AND PASTE THE LIST ABOVE,REWRITE THE SINGLE QUOTES AS THE ABOVE LIST WILL GIVE YOU AN ERROR.
 # Once you learn functions,revisit this and write this code inside a function.
-prods = [['omo','30kshs','300'], ['milk','50kshs','200'], ['bread','45kshs','359'], ['coffee','5kshs','79']]
+# prods = [['omo','30kshs','300'], ['milk','50kshs','200'], ['bread','45kshs','359'], ['coffee','5kshs','79']]
 
-for product in prods:
-    product[2] = int(product[2])
+# for product in prods:
+#     product[2] = int(product[2])
 
-x=prods[0][2]+prods[1][2]+prods[2][2]+prods[3][2]
+# x=prods[0][2]+prods[1][2]+prods[2][2]+prods[3][2]
 
-print(x)
+# print(x)
 
 prods = [['omo','30kshs','300'], ['milk','50kshs','200'],['bread','45kshs','359'], ['coffee','5kshs','79']]
 
