@@ -34,6 +34,7 @@ first_name="  Joh.n"
 first_name=first_name.replace(".","")
 first_name=first_name.strip()
 print(first_name)
+
 last_name="   Do,e"
 last_name=last_name.replace(',','')
 last_name=last_name.strip()
