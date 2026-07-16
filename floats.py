@@ -24,3 +24,15 @@ print(temp)
 # Attempt questions below. Whether you get the right answer or not, still read the solution explanation.
 # https://realpython.com/quizzes/python-data-types/
 
+w = (10 % 3)
+print(w)
+
+x =(10 // 3)
+print(x)
+
+# Python follows this rule:The remainder always has the same sign as the divisor (the second number).
+y = (-10 % 3)
+print(y)
+
+z =(-10 // 3)
+print(z)
