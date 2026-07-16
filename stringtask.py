@@ -44,3 +44,9 @@ print(first_name + " " + last_name)
 r = '["E","W","C"]'
 clean_string=r[2:11:4]
 print(clean_string)
+
+# strings are immutable --- if you want to change a string store it in a variable first or at the print
+x = "binti"
+# y = x.capitalize()  
+# print(y)
+print(x.capitalize())
