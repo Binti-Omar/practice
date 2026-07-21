@@ -9,6 +9,5 @@ d.bark() # bark here is the method
 print(type(d))
 
 value =(1,2,3)
-# value.index(0)
-print(hello)
-
+value.index(0)
+print(value)
