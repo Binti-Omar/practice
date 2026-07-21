@@ -36,3 +36,9 @@ print(y)
 
 z =(-10 // 3)
 print(z)
+
+a = 10
+b = 4
+c = a - b
+c = c * 2
+print(c)
